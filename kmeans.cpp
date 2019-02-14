@@ -9,15 +9,15 @@ using namespace std;
 
 
 
-// width and height of the image "Pogba.jpg" and the pointer to the image
+// width and height of the image ".jpg" and the pointer to the image
 UINT height;
 UINT nThreads;
 UINT width;
 
 
 // sets .jpg photo to memory BYTE
-BYTE *dataBuf = JpegFile::JpegFileToRGB("Pogba.jpg", &width, &height);  // reading image
-BYTE *dataBuf2 = JpegFile::JpegFileToRGB("Pogba.jpg", &width, &height); // reading image that will become our altered image
+BYTE *dataBuf = JpegFile::JpegFileToRGB("imageofyourchoice.jpg", &width, &height);  // reading image
+BYTE *dataBuf2 = JpegFile::JpegFileToRGB("imageofyourchoice.jpg", &width, &height); // reading image that will become our altered image
 
 //// K-means algorithm
 
@@ -186,7 +186,7 @@ int main()
 	double end = omp_get_wtime() - start;
 				
 	
-	JpegFile::RGBToJpegFile("pogbakmean.jpg", dataBuf2, width, height, true, 75);
+	JpegFile::RGBToJpegFile("imageofyourchoice.jpg", dataBuf2, width, height, true, 75);
 	
 	cout << "The processing time that this thread count took was " << end << " seconds." << endl;
 	
